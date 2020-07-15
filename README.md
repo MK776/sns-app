@@ -1,5 +1,3 @@
-デモは[こちら](https://sns-app-b2bc1.firebaseapp.com))
-
 React Routerでルーティング、
 
 正規表現で英語と日本語それぞれの入力欄をバリデーション、
@@ -11,3 +9,5 @@ React Routerでルーティング、
 データベース書き込みはできませんが、
 
 Stateで再レンダリングするまでは投稿が表示されるようにしました。
+
+デモは[こちら](https://sns-app-b2bc1.firebaseapp.com)
