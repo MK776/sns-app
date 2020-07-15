@@ -1,7 +1,8 @@
-import React, {useContext} from 'react';
-import {Context} from 'Context';
+import React, {useContext} from "react";
+import {Context} from "Context";
 
 const Form = () => {
+  
   const {handleChange, addPost, newEN, newJP} = useContext(Context);
 
   return(
@@ -9,17 +10,17 @@ const Form = () => {
     <form>
       <textarea
         value={newEN}
-        name='english'
+        name="english"
         onChange={handleChange}
-        placeholder='英語を入力'
+        placeholder="英語を入力"
       />
       <textarea
         value={newJP}
-        name='japanese'
+        name="japanese"
         onChange={handleChange}
-        placeholder='日本語を入力'
+        placeholder="日本語を入力"
       />
-      <button onClick={addPost}>Submit</button>
+      <button onClick={addPost}>投稿する</button>
     </form>
   );
 }

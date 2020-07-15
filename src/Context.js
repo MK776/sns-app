@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import firebase from 'firebase-config';
+import React, {useState, useEffect} from "react";
+import firebase from "firebase-config";
 
 const Context = React.createContext();
 
@@ -23,14 +23,21 @@ function ContextProvdider({children}){
 
 
   function handleChange(event) {
-    event.target.name === 'english' ? 
+    event.target.name === "english" ? 
       setNewEN(event.target.value):
       setNewJP(event.target.value)
   }
 
   function addPost(event) {
     event.preventDefault();
-    if(newEN === '' || newJP === '' || !isEN(newEN) || !isJP(newJP) || isOnlySpace(newEN) || isOnlySpace(newJP)){
+    if(isOnlySpace(newEN)　|| isOnlySpace(newJP)){
+      alert("エラー:　空欄があります");
+      return;
+    }else if(!isJP(newJP)){
+      alert("エラー:　日本語を下段に記入してください");
+      return;
+    }else if(!isEN(newEN)){
+      alert("エラー:　英語を上段に記入してください");
       return;
     }
     setAllPosts(prevPosts => [...prevPosts,
@@ -70,7 +77,7 @@ function ContextProvdider({children}){
 
   useEffect(() =>{
     const db = firebase.firestore();
-    db.collection('posts')
+    db.collection("posts")
       .get()
       .then((querySnapshot) => querySnapshot.docs.map((doc) => 
       setAllPosts((prevPosts) => [...prevPosts, doc.data()])));

@@ -1,5 +1,5 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React from "react";
+import {Link} from "react-router-dom";
 
 function Home(){
   return(
@@ -8,11 +8,11 @@ function Home(){
         <h1>VOCAB</h1>
         <h2>今日覚えた英語をシェアしよう</h2>
         <Link to="/post">
-          <p className="start-btn">始める</p>
+          <p className="btn-to-post">始める</p>
         </Link>
       </div>
     </div>
-  )
+  );
 }
 
 export default Home;
